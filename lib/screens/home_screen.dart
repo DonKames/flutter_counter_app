@@ -5,6 +5,29 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text('HomeScreen')));
+    const TextStyle fontSize30 = TextStyle(fontSize: 30);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('HomeScreen'),
+        elevation: 10.0,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const <Widget>[
+            Text('Clicks Count', style: fontSize30),
+            Text('0', style: fontSize30),
+          ],
+        ),
+      ),
+      //floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          print('clicked');
+        },
+      ),
+    );
   }
 }
